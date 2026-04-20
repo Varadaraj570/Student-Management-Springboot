@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // VALIDATION ERROR HANDLER
+    
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
@@ -26,7 +26,7 @@ public class GlobalExceptionHandler {
         return errors;
     }
 
-    // JSON FORMAT ERROR HANDLER
+    
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, String> handleGeneralException(Exception ex) {

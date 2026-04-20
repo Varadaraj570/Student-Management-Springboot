@@ -1,30 +1,11 @@
-package com.student.studentapp.model;
+package com.student.studentapp.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+public class StudentDTO {
 
-@Entity
-public class Student {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @NotBlank(message = "Name cannot be empty")
     private String name;
-
-    @Email(message = "Invalid Email format")
-    @NotBlank(message = "Email cannot be blank")
     private String email;
-
-    @NotBlank(message = "Course cannot be blank")
     private String course;
-
-   
 
     public int getId() {
         return id;

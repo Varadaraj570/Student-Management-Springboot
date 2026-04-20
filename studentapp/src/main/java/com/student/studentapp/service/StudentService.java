@@ -27,16 +27,16 @@ public class StudentService {
     }
 
     public Student updateStudent(int id, Student student) {
-    Student existing = repository.findById(id)
+    Student existing = repo.findById(id)
             .orElseThrow(() -> new RuntimeException("Student not found"));
 
     existing.setName(student.getName());
     existing.setEmail(student.getEmail());
     existing.setCourse(student.getCourse());
 
-    return repository.save(existing);
+    return repo.save(existing);
 }
 public void deleteStudent(int id) {
-    repository.deleteById(id);
+    repo.deleteById(id);
 }
 }
